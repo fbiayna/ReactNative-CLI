@@ -328,3 +328,6 @@ temp/
 
 # Firebase
 .firebase/
+
+# Key
+.utils/serviceAccountKey.json
