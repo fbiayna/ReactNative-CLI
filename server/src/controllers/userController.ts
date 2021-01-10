@@ -1,21 +1,21 @@
 export {}
-const admin = require('../../src/utils/database')
-const database = admin.firestore()
+const initializeCloud = require('../utils/firebaseData')
 
 interface UserFunctions {
     getMethod: Function
 }
 
 function UserController ():UserFunctions {
-  function getMethod () {
-    database.collection('usuarios').get()
+  function getMethod (req, res) {
+    console.log(req)
+    initializeCloud().collection('usuarios').get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          console.log(doc.id, '=>', doc.data())
+          res.send(console.log(doc.id, '=>', doc.data()))
         })
       })
       .catch((err) => {
-        console.log('Error getting documents', err)
+        console.log('Error getting documents', res.send(err))
       })
   }
   return {
