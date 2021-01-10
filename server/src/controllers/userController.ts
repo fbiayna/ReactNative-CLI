@@ -1,5 +1,5 @@
 export {}
-const initializeCloud = require('../utils/firebaseData')
+const initializeCloud = require('../utils/firebaseData.ts')
 
 interface UserFunctions {
     getMethod: Function
