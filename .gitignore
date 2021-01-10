@@ -331,3 +331,4 @@ temp/
 
 # Key
 server/src/utils/serviceAccountKey.json
+firebaseCloud/serviceAccountKey.json
