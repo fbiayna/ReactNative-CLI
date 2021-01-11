@@ -1,8 +1,8 @@
-const initializeFirebaseCloud = require('../utils/firebaseData.ts')
+const postNewUser = require('../utils/firebaseData.ts')
 
-async function postNewUser () {
+async function AddUser () {
   try {
-    const newDoc = await initializeFirebaseCloud().collection('usuarios').add({
+    const newDoc = await postNewUser().collection('usuarios').add({
       name: '51',
       surname: 'Trips',
       email: '51trips@51tripsbrand.com'
@@ -13,4 +13,4 @@ async function postNewUser () {
   }
 }
 
-postNewUser()
+AddUser()

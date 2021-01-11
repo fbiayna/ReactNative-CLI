@@ -1,12 +1,12 @@
-const initializeFirebaseCloud = require('../utils/firebaseData.ts')
+const getUsers = require('../utils/firebaseData.ts')
 
-initializeFirebaseCloud().collection('usuarios').get()
+getUsers().collection('usuarios').get()
   .then((snapshot) => {
-    snapshot.forEach((doc) => {
-      console.log(doc.id, '=>', doc.data())
+    snapshot.forEach((document) => {
+      console.log(document.id, '=>', document.data())
     })
   })
-  .catch(err => {
-    console.error('Error', err)
+  .catch(error => {
+    console.error('Error', error)
     process.exit()
   })
