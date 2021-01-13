@@ -1,5 +1,4 @@
-export {}
-const initializeCloud = require('../utils/firebaseData.ts')
+const getUser = require('../utils/firebaseData.ts')
 
 interface UserFunctions {
     getMethod: Function
@@ -8,7 +7,7 @@ interface UserFunctions {
 function UserController ():UserFunctions {
   function getMethod (req, res) {
     console.log(req)
-    initializeCloud().collection('usuarios').get()
+    getUser().collection('usuarios').get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
           res.send(console.log(doc.id, '=>', doc.data()))
