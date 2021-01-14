@@ -1,7 +1,7 @@
 const admin = require('firebase-admin')
 const serviceAccount = require('../utils/serviceAccountKey.json')
 
-function initializeCloud () {
+function initializeFirebaseCloud () {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   })
@@ -10,4 +10,4 @@ function initializeCloud () {
   return dataBase
 }
 
-module.exports = initializeCloud
+module.exports = initializeFirebaseCloud
